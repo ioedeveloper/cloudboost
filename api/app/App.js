@@ -141,7 +141,7 @@ module.exports = function (app) {
             var sdk = req.body.sdk || "REST";
             var appKey = req.body.key || req.params.key;
 
-            if (global.mongoDisconnected) {
+            if (config.mongoDisconnected) {
                 return res.status(500).send('Storage / Cache Backend are temporarily down.');
             }
 
