@@ -27,6 +27,7 @@ global.winston.add(global.winston.transports.Loggly, {
     json: true
 });
 
+console.log(config);
 // add slack transport if API key found
 if (config.slackWebHook) {
     global.winston.add(slack, {
