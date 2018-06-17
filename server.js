@@ -11,12 +11,12 @@ var cors = require('cors');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var config = require('./config/config');
+var slack = require('winston-bishop-slack').Slack;
 
 global.winston = require('winston');
 require('winston-loggly');
-var slack = require('winston-bishop-slack').Slack;
 
-var config = require('./config/config');
 var logglyTags = config.logglyTags ? config.logglyTags.split(',') : [];
 var port = config.port || 4730;
 
