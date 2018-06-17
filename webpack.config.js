@@ -16,6 +16,7 @@ var config = [{
         Axios: "axios"
     },
     module: {
+        noParse: /node_modules\/localforage\/dist\/localforage.js/,
         loaders: [
             { test: /\.json$/, loader: 'json' },
             {
@@ -45,6 +46,7 @@ var config = [{
         Axios: "axios"
     },
     module: {
+        noParse: /node_modules\/localforage\/dist\/localforage.js/,
         loaders: [
             { test: /\.json$/, loader: 'json' },
             {

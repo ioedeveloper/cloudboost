@@ -92,7 +92,6 @@ mongoService.document = {
                 return deferred.promise;
             }
 
-            // var collection = global.database.collection(_self.collection.getId(appId, collectionName));
             var collection = config.mongoClient.db(appId).collection(_self.collection.getId(appId, collectionName));
             var findQuery = collection.find();
 
