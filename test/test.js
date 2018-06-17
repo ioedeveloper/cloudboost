@@ -23,6 +23,7 @@ var window = window || null;
 var request = require('request');
 var CB = require('../sdk/dist/cloudboost');
 var equal = require('deep-equal');
+
 describe("Cloud App", function() {
     
     it("MongoDb,RedisDb & Elastic SearchDb Statuses..", function(done) {
@@ -974,7 +975,6 @@ describe("Should Create All Test Tables", function(done) {
     });
 
 });
-
 
 describe("Export & Import Table", function () {
 
@@ -2949,6 +2949,7 @@ describe("CloudUser", function () {
     });
 
 });
+
 describe("CloudEvent", function() {
     var username = 'ritishgumber';
     var passwd = 'ritish4321';
@@ -4439,6 +4440,7 @@ describe("Bulk API",function(done){
         });
     });
 });
+
 describe("Cloud Objects Files", function() {
 
     try {
@@ -4625,6 +4627,7 @@ describe("Cloud Objects Files", function() {
     }
 
 });
+
 describe("ACL Tests Over Files",function(done){
 
     before(function(){
@@ -4699,6 +4702,7 @@ describe("ACL Tests Over Files",function(done){
     });
 
 });
+
 describe("CloudObjectExpires", function () {
 
     it("should save a CloudObject after expire is set", function (done) {
@@ -4786,6 +4790,7 @@ describe("CloudObjectExpires", function () {
     });
 
 });
+
 describe("Cloud Objects Notification", function () {
 
 	var obj = new CB.CloudObject('Student');
@@ -4996,6 +5001,7 @@ describe("Cloud Objects Notification", function () {
 	});
 
 });
+
 describe("Query on Cloud Object Notifications ", function() {
 
     //Use Sample Table.
@@ -6299,6 +6305,7 @@ describe("CloudObject - Encryption", function (done) {
     });
 
 });
+
 describe("CloudExpire", function () {
 
     it("Sets Expire in Cloud Object.", function (done) {
@@ -6347,6 +6354,7 @@ describe("CloudExpire", function () {
     });
 
 });
+
 describe("CloudQuery Include", function (done) {
     
    
@@ -6648,6 +6656,7 @@ describe("CloudQuery Include", function (done) {
     });
 
 });
+
 describe("CloudQuery", function(done) {
 
     var obj = new CB.CloudObject('student1');
@@ -8925,6 +8934,7 @@ describe("CloudQuery - Encryption", function () {
     });
 
 });
+
 describe("CloudRole", function (done) {
 
     it("Should create a role", function (done) {
@@ -9210,7 +9220,6 @@ describe("ACL", function () {
     });
 });
 
-
 describe("Query_ACL", function () {
 
     var obj = new CB.CloudObject('student4');
@@ -9321,7 +9330,6 @@ describe("Query_ACL", function () {
 
 });
 
-
 describe("Search_ACL", function () {
 
     var obj = new CB.CloudObject('student4');
@@ -9354,7 +9362,6 @@ describe("Search_ACL", function () {
         });  
 
 });
-
 
 describe("CloudNotification", function() {
  
@@ -9524,7 +9531,6 @@ describe("MasterKey ACL", function () {
      });
 
 });
-
 
 describe("Cloud GeoPoint Test", function() {
 
@@ -9922,6 +9928,7 @@ describe("Version Test",function(done){
         });
     });
 });
+
 describe("Table Tests", function (done) {
 
     before(function(){
@@ -10002,6 +10009,7 @@ describe("Table Tests", function (done) {
     });
 
 });
+
 describe("Cloud Table", function(){
 
     before(function(){
@@ -10534,6 +10542,7 @@ describe("Cloud App is connected.", function() {
     })
     
 });
+
 describe("App level ACL, for adding deleting tables of an app via clientKey", function(){
 
     before(function(){
@@ -10662,53 +10671,6 @@ describe("App level ACL, for adding deleting tables of an app via clientKey", fu
   	});
 
 
-});
-
-describe('render page', function() {
-
-    it("should render the Login authentication page.", function(done) {
-        this.timeout(100000);
-        var url = URL + '/page/' + CB.appId + '/authentication';
-        if (!window) {
-            request({
-                url: url, //URL to hit
-                method: 'GET'
-            }, function(error, response, body) {
-
-                if (error || response.statusCode === 500 || response.statusCode === 400) {
-                    done("something went wrong...");
-                } else if (body === 'App Not found' || response.statusCode === 404) {
-                    done("App not found");
-                } else {
-                    if (body.indexOf("template") === -1) {
-                        done();
-                    }
-                }
-            });
-        } else {
-            $.ajax({
-                url: url,
-                type: "GET",
-                success: function(response) {
-
-                    if (error || response.statusCode === 500 || response.statusCode === 400) {
-                        done("something went wrong...");
-                    } else if (body === 'App Not found' || response.statusCode === 404) {
-                        done("App not found");
-                    } else {
-
-                        if (body.indexOf("template") === -1) {
-                            done();
-                        }
-
-                    }
-                },
-                error: function(xhr, status, errorThrown) {
-                    done("Something went wrong..");
-                },
-            });
-        }
-    });
 });
 
 describe("Atomicity Tests",function(done){
@@ -10867,6 +10829,7 @@ describe("Atomicity Tests",function(done){
 
 
 });
+
 describe("Should delete All Test Tables",function(done){
 
     before(function(){
@@ -10935,6 +10898,7 @@ describe("Should delete All Test Tables",function(done){
 
     });
 });
+
 describe("Delete App", function() {
     it("should delete the app and teardown", function(done) {
         this.timeout(100000);
@@ -11164,6 +11128,7 @@ describe("Disabled CloudNotification", function() {
     });
 
 });
+
 describe("Disabled - Cloud Objects Notification", function() {
   
 	  var obj = new CB.CloudObject('Student');
@@ -11358,6 +11323,7 @@ describe("Disabled - Cloud Objects Notification", function() {
     });
 
 });
+
 describe("Disabled Cloud Object test", function() {
 
     before(function(){
