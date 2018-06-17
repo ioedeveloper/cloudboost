@@ -17,8 +17,6 @@ var slack = require('winston-bishop-slack').Slack;
 global.winston = require('winston');
 require('winston-loggly');
 
-console.log(config);
-
 var logglyTags = config.logglyTags ? config.logglyTags.split(',') : [];
 var port = config.port || 4730;
 
